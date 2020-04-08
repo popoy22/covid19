@@ -1,20 +1,18 @@
-Covid 19 Monitoring System
+### Covid 19 Monitoring System
 
-- created by JAVA
-- created by Angular
+to monitor covid from api,
+
+- using JAVA to copy the API to you MYSQL Database
+- using Angular & Angular Material 
 
 Requirement:
 JAVA PHP MYSQL 
 
 
 
+### JAVA
 
-
-### JAVA SETUP
-
-
-
-### Reference Documentation
+## Reference Documentation
 For further reference, please consider the following sections:
 
 * [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
@@ -23,7 +21,7 @@ For further reference, please consider the following sections:
 * [Spring Data JPA](https://docs.spring.io/spring-boot/docs/2.2.6.RELEASE/reference/htmlsingle/#boot-features-jpa-and-spring-data)
 * [Spring Boot DevTools](https://docs.spring.io/spring-boot/docs/2.2.6.RELEASE/reference/htmlsingle/#using-boot-devtools)
 
-### Guides
+## Guides
 The following guides illustrate how to use some features concretely:
 
 * [Accessing JPA Data with REST](https://spring.io/guides/gs/accessing-data-rest/)
@@ -31,3 +29,17 @@ The following guides illustrate how to use some features concretely:
 * [Accessing MongoDB Data with REST](https://spring.io/guides/gs/accessing-mongodb-data-rest/)
 * [Accessing Data with JPA](https://spring.io/guides/gs/accessing-data-jpa/)
 * [Accessing data with MySQL](https://spring.io/guides/gs/accessing-data-mysql/)
+
+
+
+## MySQL & APPLICATION PROPERTIES
+
+spring.datasource.url=jdbc:mysql://localhost:3306/covid?useTimezone=true&serverTimezone=UTC
+spring.datasource.username=root
+spring.datasource.password=
+spring.jpa.hibernate.use-new-id-generator-mappings=false
+spring.jpa.hibernate.ddl-auto=create
+
+
+
+
