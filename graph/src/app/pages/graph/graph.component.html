@@ -1,0 +1,17 @@
+<div class="container-fluid">
+  <div style="display: block;">
+    <canvas
+      style="width: 100%; height: 15000px;"
+      mdbChart
+      [chartType]="chartType"
+      [datasets]="chartDatasets"
+      [labels]="chartLabels"
+      [colors]="chartColors"
+      [options]="chartOptions"
+      [legend]="true"
+      (chartHover)="chartHovered($event)"
+      (chartClick)="chartClicked($event)"
+    >
+    </canvas>
+  </div>
+</div>

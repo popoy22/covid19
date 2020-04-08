@@ -1,0 +1,46 @@
+<!--<div style="display: block;">
+  <canvas
+    mdbChart
+    [chartType]="chartType"
+    [datasets]="chartDatasets"
+    [labels]="chartLabels"
+    [colors]="chartColors"
+    [options]="chartOptions"
+    [legend]="true"
+    (chartHover)="chartHovered($event)"
+    (chartClick)="chartClicked($event)"
+  >
+  </canvas></div>-->
+
+<div class="container">
+  <table
+    mdbTable
+    class="z-depth-1 table table-striped table-responsive-md btn-table"
+  >
+    <thead>
+      <tr>
+        <th colspan="2" [mdbTableSort]="apiData" sortBy="country">
+          <i class="fas fa-sort"></i> Country
+        </th>
+        <th [mdbTableSort]="apiData" sortBy="cases">
+          <i class="fas fa-sort"></i> Cases
+        </th>
+        <th [mdbTableSort]="apiData" sortBy="deaths">
+          <i class="fas fa-sort"></i> Deaths
+        </th>
+        <th [mdbTableSort]="apiData" sortBy="recovered">
+          <i class="fas fa-sort"></i> Recovered
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let el of apiData; let i = index">
+        <td><img [src]="el.flag" width="30" /></td>
+        <th>{{ el.country }}</th>
+        <td>{{ el.cases | number }}</td>
+        <td>{{ el.deaths | number }}</td>
+        <td>{{ el.recovered | number }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
