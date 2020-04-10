@@ -12,7 +12,7 @@ JAVA PHP MYSQL
 ## Angular
 folder name "graph"
 Angular 9
-
+Material Design for Bootstrap
 
 ## Java
 folder name "api"
@@ -20,5 +20,6 @@ Java 8
 Springboot
 JPA Hibernate
 
-#MYSQL
+## MYSQL
 check application properties for your information
+
