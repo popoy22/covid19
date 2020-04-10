@@ -1,4 +1,4 @@
-# Covid 19 Monitoring System
+# Covid 19 Tracker
 
 to monitor covid from api,
 
