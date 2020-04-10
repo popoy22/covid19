@@ -2,6 +2,7 @@ package com.covid.api.dao;
 
 import org.springframework.stereotype.Component;
 
+import javax.net.ssl.HttpsURLConnection;
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -12,29 +13,30 @@ import java.net.URL;
 @Component
 public class NetworkDAO {
 
-    public String request(String endpoint) throws  Exception{
+    public String request(String endpoint) throws Exception {
 
         StringBuilder sb = new StringBuilder();
         URL url = new URL(endpoint);
 
         HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
-            try {
-                InputStream inputStream = urlConnection.getInputStream();
-                BufferedInputStream bufferedInputStream = new BufferedInputStream(inputStream);
+        urlConnection.addRequestProperty("User-Agent", "Mozilla/4.76");
+        try {
+            InputStream inputStream = urlConnection.getInputStream();
+            BufferedInputStream bufferedInputStream = new BufferedInputStream(inputStream);
 
-                InputStreamReader inputStreamReader = new InputStreamReader(bufferedInputStream);
-                BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+            InputStreamReader inputStreamReader = new InputStreamReader(bufferedInputStream);
+            BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
 
-                String inputLine = bufferedReader.readLine();
-                while (inputLine != null) {
-                    sb.append(inputLine);
-                    inputLine = bufferedReader.readLine();
-                }
-            } finally {
-                urlConnection.disconnect();
+            String inputLine = bufferedReader.readLine();
+            while (inputLine != null) {
+                sb.append(inputLine);
+                inputLine = bufferedReader.readLine();
             }
+        } finally {
+            urlConnection.disconnect();
+        }
 
 
-        return  sb.toString();
+        return sb.toString();
     }
 }

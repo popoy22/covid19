@@ -19,8 +19,8 @@ export class GraphComponent implements OnInit {
 
   constructor(private http: HttpClient) {}
 
-  loadChart() {
-    this.http.get('http://localhost:8080/country/parse').subscribe((data) => {
+  loadChart(url) {
+    this.http.get(url).subscribe((data) => {
       this.apiData = data;
       for (let i in this.apiData) {
         this.countries.push(this.apiData[i].country);
@@ -34,8 +34,9 @@ export class GraphComponent implements OnInit {
       }
     });
   }
+
   ngOnInit(): void {
-    this.loadChart();
+    this.loadChart('http://localhost:8080/api/country');
   }
 
   public chartType: string = 'horizontalBar';
@@ -69,6 +70,10 @@ export class GraphComponent implements OnInit {
   public chartOptions: any = {
     responsive: false,
   };
-  public chartClicked(e: any): void {}
+
+  public chartClicked(e: any): void {
+    console.log(e);
+  }
+
   public chartHovered(e: any): void {}
 }

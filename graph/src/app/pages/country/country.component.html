@@ -1,0 +1,56 @@
+<div class="container" *ngIf="!data">
+  <div class="d-flex justify-content-center">
+    <div class="spinner-border" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+</div>
+
+<div class="container" *ngIf="data">
+  <div class="row">
+    <div class="col-md-2">
+      <img [src]="data.countryInfo.flag" width="100"/>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <table class="table table-hover table-bordered mt-5">
+        <tbody>
+        <tr>
+          <th>Cases</th>
+          <td>{{ data.tests | number }}</td>
+        </tr>
+        <tr>
+          <th>Confirmed</th>
+          <td>{{ data.active | number }}</td>
+        </tr>
+        <tr>
+          <th>Deaths</th>
+          <td>{{ data.deaths | number }}</td>
+        </tr>
+        <tr>
+          <th>Recovered</th>
+          <td>{{ data.recovered | number }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col-md-6">
+      <div style="display: block;">
+        <canvas
+          mdbChart
+          [chartType]="chartType"
+          [datasets]="chartDatasets"
+          [labels]="chartLabels"
+          [colors]="chartColors"
+          [options]="chartOptions"
+          [legend]="true"
+          (chartHover)="chartHovered($event)"
+          (chartClick)="chartClicked($event)"
+        >
+        </canvas>
+      </div>
+    </div>
+  </div>
+</div>

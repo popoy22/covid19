@@ -1,33 +1,33 @@
 package com.covid.api.model;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotEmpty;
 import java.util.Date;
 
 @Entity
 public class Country {
     @Id
-    private  Long id;
-    private  String country;
-    private  Integer _id;
-    private  String iso2;
-    private  String iso3;
-    private  Integer lat;
-    private  Integer lng;
-    private  String flag;
-    private  Long updated;
-    private  Integer cases;
-    private  Integer todayCases;
-    private  Integer deaths;
-    private  Integer todayDeaths;
-    private  Integer recovered;
-    private  Integer active;
-    private  Integer critical;
-    private  Float casesPerOneMillion;
-    private  Float deathsPerOneMillion;
-    private  Integer tests;
-    private  Float testsPerOneMillion;
+    private Long id;
+    private String country;
+    private Integer _id;
+    private String iso2;
+    private String iso3;
+    private Integer lat;
+    private Integer lng;
+    private String flag;
+    private Long updated;
+    private Integer cases;
+    private Integer todayCases;
+    private Integer deaths;
+    private Integer todayDeaths;
+    private Integer recovered;
+    private Integer active;
+    private Integer critical;
+    private Float casesPerOneMillion;
+    private Float deathsPerOneMillion;
+    private Integer tests;
+    private Float testsPerOneMillion;
     private Date dateUpdated;
+
 
     public Long getId() {
         return id;

@@ -14,7 +14,7 @@ import java.util.Date;
 import java.util.List;
 
 @Component
-public class CountryDAO  {
+public class CountryDAO {
 
     @Autowired
     NetworkDAO networkDAO;
@@ -31,7 +31,7 @@ public class CountryDAO  {
         //JSONObject root = new JSONObject(rawJSON);
         JSONArray countries = new JSONArray(rawJSON);
 
-        for(int i = 0; i < countries.length(); i++){
+        for (int i = 0; i < countries.length(); i++) {
             Country country = new Country();
             JSONObject jsonCountry = countries.getJSONObject(i);
 
@@ -44,15 +44,15 @@ public class CountryDAO  {
             Integer recovered = jsonCountry.getInt("recovered");
             Integer active = jsonCountry.getInt("active");
             Integer critical = jsonCountry.getInt("critical");
-            Float casesPerOneMillion = jsonCountry.optFloat("casesPerOneMillion",0);
-            Float deathsPerOneMillion = jsonCountry.optFloat("deathsPerOneMillion",0);
+            Float casesPerOneMillion = jsonCountry.optFloat("casesPerOneMillion", 0);
+            Float deathsPerOneMillion = jsonCountry.optFloat("deathsPerOneMillion", 0);
             Integer tests = jsonCountry.getInt("tests");
-            Float testsPerOneMillion = jsonCountry.optFloat("testsPerOneMillion",0);
+            Float testsPerOneMillion = jsonCountry.optFloat("testsPerOneMillion", 0);
 
             JSONObject countryInfo = jsonCountry.getJSONObject("countryInfo");
-            country.setId(countryInfo.optLong("_id",0));
-            country.set_id(countryInfo.optInt("_id",0));
-            country.setIso2(countryInfo.optString("iso2",null));
+            country.setId(countryInfo.optLong("_id", 0));
+            country.set_id(countryInfo.optInt("_id", 0));
+            country.setIso2(countryInfo.optString("iso2", null));
             country.setIso3(countryInfo.optString("iso3"));
             country.setLat(countryInfo.optInt("lat"));
             country.setLng(countryInfo.optInt("long"));
@@ -77,11 +77,8 @@ public class CountryDAO  {
         }
 
 
-        return  allCountryModel;
+        return allCountryModel;
     }
-
-
-
 
 
 }
